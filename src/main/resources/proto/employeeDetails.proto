@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_package = "proto";
+import "google/protobuf/timestamp.proto";
+
+service EmployeeDetails {
+  rpc GetEmployeeDetails (EmployeeID) returns (Employee) {}
+  rpc SetEmployeeDetails (Employee) returns (EmployeeID) {}
+}
+message Employee {
+  string id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string mobileNumber = 4;
+  google.protobuf.Timestamp dateOfJoining = 5;
+}
+
+message EmployeeID{
+  string id= 1;
+}
